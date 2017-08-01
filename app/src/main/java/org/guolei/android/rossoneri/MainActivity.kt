@@ -9,5 +9,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        println(" '金' > '愛' = " + ("金" > "愛"))
+        println(" '愛' > '金' = " + ("愛" > "金"))
+
+        println(" '金' > '愛' = " + ("金" > '愛'.toString()))
+        println(" '愛' > '金' = " + ("愛" > '金'.toString()))
+
+        println(" '金' > '愛' = " + ('金'.toString() > '愛'.toString()))
+        println(" '愛' > '金' = " + ('愛'.toString() > '金'.toString()))
+
     }
 }

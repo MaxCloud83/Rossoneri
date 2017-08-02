@@ -4,6 +4,7 @@ import org.guolei.android.rossoneri.model.Shot
 import retrofit2.http.Query
 import retrofit2.Callback
 import retrofit2.http.GET
+import io.reactivex.Observable
 
 /**
  * Created by mountain on 2017/08/02.
@@ -11,7 +12,7 @@ import retrofit2.http.GET
 interface ShotApi {
 
     @GET("/shots/?access_token=$ACCESS_TOKEN&per_page=24")
-    fun fetchShots(@Query("list") type: String, @Query("page") page: Int, callback: Callback<List<Shot>>)
+    fun fetchShots(@Query("list") type: String, @Query("page") page: Int): Observable<List<Shot>>
 
     enum class Type private constructor(key: String) {
         ANIMATED("animated"),

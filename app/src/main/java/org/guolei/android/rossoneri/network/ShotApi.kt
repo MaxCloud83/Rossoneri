@@ -11,7 +11,7 @@ import io.reactivex.Observable
  */
 interface ShotApi {
 
-    @GET("/shots/?access_token=$ACCESS_TOKEN&per_page=24")
+    @GET("$API_VERSION/shots/?access_token=$ACCESS_TOKEN&per_page=24")
     fun fetchShots(@Query("list") type: String, @Query("page") page: Int): Observable<List<Shot>>
 
     enum class Type private constructor(key: String) {
@@ -31,6 +31,7 @@ interface ShotApi {
     }
 
     companion object {
+        const val  API_VERSION = "v1"
         const val  ACCESS_TOKEN = "67f7f46ae24ee28dac71ee61f97f2fb665f31fca2f9c4ff0dac49836011b3a32"
     }
 }

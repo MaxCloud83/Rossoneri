@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object HttpClient {
     val retrofit: Retrofit
     get() = Retrofit.Builder()
-            .baseUrl("https://api.dribbble.com/v1/")
+            .baseUrl("https://api.dribbble.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
